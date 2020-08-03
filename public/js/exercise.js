@@ -27,7 +27,6 @@ async function initExercise() {
   if (workout) {
     location.search = "?id=" + workout._id;
   }
-
 }
 
 initExercise();
@@ -72,6 +71,7 @@ function validateInputs() {
     if (resistanceDurationInput.value.trim() === "") {
       isValid = false;
     }
+    
   } else if (workoutType === "cardio") {
     if (cardioNameInput.value.trim() === "") {
       isValid = false;
