@@ -16,4 +16,11 @@ module.exports = app => {
 
     res.json(await currentWorkout.save())
   })
+
+  app.post("/api/workouts", (req, res) => {
+    // db.Workout.create({}).then(result => res.json(result));
+    console.log(req.body);
+  });
+
+
 }
