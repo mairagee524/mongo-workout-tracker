@@ -31,6 +31,8 @@ a:active,
 a:visited {
   text-decoration: none;
   color: inherit;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 header {
