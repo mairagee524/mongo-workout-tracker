@@ -9,9 +9,9 @@ fetch("/api/workouts/range")
   });
 
 
-API.getWorkoutsInRange()
+// API.getWorkoutsInRange()
 
-  function generatePalette() {
+function generatePalette() {
     const arr = [
     "#003f5c",
     "#2f4b7c",
@@ -218,6 +218,6 @@ function workoutNames(data) {
       workouts.push(exercise.name);
     });
   });
-  
+
   return workouts;
 }

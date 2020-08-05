@@ -17,10 +17,21 @@ module.exports = app => {
     res.json(await currentWorkout.save())
   })
 
-  app.post("/api/workouts", (req, res) => {
+  app.post("/api/workouts", async (req, res) => {
     // db.Workout.create({}).then(result => res.json(result));
     console.log(req.body);
+    console.log("fashfdjaks");
+
+    // create new workout
+    const newWorkout = new db.Workout();
+
+    // push results to browser
+    res.json(await newWorkout.save());
   });
 
+  // whats the range?
+  app.get("/api/workouts/range", async (req, res) => {
+    db.Workout.find().then(result => res.json(result));
+  });
 
 }
