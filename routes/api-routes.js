@@ -19,8 +19,6 @@ module.exports = app => {
 
   app.post("/api/workouts", async (req, res) => {
     // db.Workout.create({}).then(result => res.json(result));
-    console.log(req.body);
-    console.log("fashfdjaks");
 
     // create new workout
     const newWorkout = new db.Workout();
@@ -31,7 +29,7 @@ module.exports = app => {
 
   // whats the range?
   app.get("/api/workouts/range", async (req, res) => {
-    db.Workout.find().then(result => res.json(result));
+    db.Workout.find({}).limit(7).then(result => res.json(result));
+    console.log(result);
   });
-
 }
