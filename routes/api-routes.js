@@ -12,7 +12,7 @@ module.exports = app => {
   app.put('/api/workouts/:id', async (req, res) => {
     const currentWorkout = await db.Workout.findById(req.params.id)
 
-    currentWorkout.exercises.push(req.body)
+    currentWorkout.exercises.push(req.body);
 
     res.json(await currentWorkout.save())
   })
@@ -30,6 +30,6 @@ module.exports = app => {
   // whats the range?
   app.get("/api/workouts/range", (req, res) => {
     console.log("heyooooooooooo");
-    db.Workout.find().then(result => res.json(result));
+    db.Workout.find().limit(7).then(result => res.json(result));
   });
 }

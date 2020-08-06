@@ -8,8 +8,8 @@ const workoutSchema = new Schema({
     {
       type: { type: String }, // cardio or resitance
       weight: Number,
-      set: Number,
-      rep: Number,
+      sets: Number,
+      reps: Number,
       duration: {
         type: Number,
         required: true 
