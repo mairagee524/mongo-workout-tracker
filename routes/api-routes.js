@@ -4,7 +4,9 @@ var db = require("../models");
 module.exports = app => {
   // GET route for getting all of the posts
   app.get("/api/workouts", (req, res) => {
-    db.Workout.find().then(result => res.json(result));
+    db.Workout.find()
+      .then(result => res.json(result))
+      .catch(err => res.json(err));
   });
 
   // UPDATE the workout represented by the :id with the information
@@ -14,7 +16,8 @@ module.exports = app => {
 
     currentWorkout.exercises.push(req.body);
 
-    res.json(await currentWorkout.save())
+    res.json(await currentWorkout
+      .save())
   })
 
   app.post("/api/workouts", async (req, res) => {
@@ -24,11 +27,14 @@ module.exports = app => {
     const newWorkout = new db.Workout();
 
     // push results to browser
-    res.json(await newWorkout.save());
+    res.json(await newWorkout
+      .save())
   });
 
   // whats the range?
   app.get("/api/workouts/range", (req, res) => {
-    db.Workout.find().limit(7).then(result => res.json(result));
+    db.Workout.find().limit(7)
+      .then(result => res.json(result))
+      .catch(err => res.json(err));
   });
 }
