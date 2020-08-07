@@ -29,7 +29,6 @@ module.exports = app => {
 
   // whats the range?
   app.get("/api/workouts/range", (req, res) => {
-    console.log("heyooooooooooo");
     db.Workout.find().limit(7).then(result => res.json(result));
   });
 }
