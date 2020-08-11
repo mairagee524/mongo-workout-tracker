@@ -4,6 +4,7 @@ var db = require("../models");
 module.exports = app => {
   // GET route for getting all of the posts
   app.get("/api/workouts", (req, res) => {
+    // finding all workouts
     db.Workout.find()
       .then(result => res.json(result))
       .catch(err => res.json(err));
